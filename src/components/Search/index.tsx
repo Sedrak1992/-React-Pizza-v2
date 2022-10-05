@@ -3,7 +3,8 @@ import debounce from "lodash.debounce";
 import styles from "./Search.module.scss";
 import { useDispatch } from "react-redux";
 import { setSearchValue } from "../../redux/filte/slice";
-
+import iSearch from "../../components/img/search_seo_icon.png";
+import Icon from "../../components/img/ic_icon.png";
 export const Search: React.FC = () => {
   const dispatch = useDispatch();
   const [value, setValue] = useState<string>("");
@@ -27,10 +28,7 @@ export const Search: React.FC = () => {
   };
   return (
     <div className={styles.root}>
-      <img
-        className={styles.icon}
-        src="/img/4781817_brows_browsing_find_search_seo_icon.png"
-      />
+      <img className={styles.icon} src={iSearch} />
 
       <input
         ref={inputRef}
@@ -41,11 +39,7 @@ export const Search: React.FC = () => {
       />
 
       {value && (
-        <img
-          onClick={onClickClear}
-          className={styles.clearIcon}
-          src="/img/3669378_clear_ic_icon.png"
-        />
+        <img onClick={onClickClear} className={styles.clearIcon} src={Icon} />
       )}
     </div>
   );
